@@ -91,11 +91,11 @@ export default function Experience() {
             <span style={{ color: "var(--teal)" }}>sharpening my craft</span>
           </h2>
         </div>
+        <EducationCard />
         <div className="experience-list">
           {experience.map((exp) => (
             <ExpCard key={exp.title} exp={exp} />
           ))}
-          <EducationCard />
         </div>
       </div>
     </section>
