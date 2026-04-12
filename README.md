@@ -7,7 +7,7 @@ A premium, production-ready portfolio website built with **React + Vite**, featu
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js 18+ and npm
+- Node.js 24+ and npm
 
 ### Installation
 
@@ -92,7 +92,7 @@ To swap the profile image, replace the SVG illustration inside `Hero.jsx`'s `.he
 
 ## 🔧 Tech Stack
 
-- **React 18** — UI library
+- **React 24** — UI library
 - **Vite 5** — Build tool
 - **Framer Motion** — Animation library (available, extend as needed)
 - **react-type-animation** — Typing effect in hero
