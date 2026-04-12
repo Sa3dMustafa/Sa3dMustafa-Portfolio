@@ -45,12 +45,7 @@
       "Engineered a performance-first Quran app with SSG/ISR via Next.js, full Arabic text support, audio recitation, and multilingual translations.",
     impact:
       "Achieved 98+ Lighthouse scores, sub-second load times, and delivered a respectful, accessible spiritual experience to thousands of users.",
-    tech: [
-      "Next.js",
-      "React",
-      "Alquran Cloud API",
-      "Tailwind CSS",
-    ],
+    tech: ["Next.js", "React", "Alquran Cloud API", "Tailwind CSS"],
     achievements: [
       "98+ Lighthouse performance score",
       "Server-side rendering with ISR for instant loads",
@@ -112,7 +107,7 @@
     color: "#60b347",
     emoji: "🎯",
   },
-]
+];
 
 export const skills = {
   Frontend: [
@@ -146,7 +141,7 @@ export const skills = {
     { name: "Python", icon: "https://cdn.simpleicons.org/python" },
     { name: "C++", icon: "https://cdn.simpleicons.org/cplusplus" },
   ],
-}
+};
 
 export const leadership = [
   {
@@ -175,23 +170,23 @@ export const leadership = [
       "Coordinated media coverage for Google DevFest and workshops",
     ],
   },
-]
+];
 
 export const experience = [
   {
-    title: "Frontend Developer Intern",
-    company: "NTI - National Telecommunication Institute",
-    period: "Summer 2023",
+    title: "Front End Intern",
+    company: "NTI - National Telecommunication Institute, Mansoura, Egypt",
+    period: "Feb. 2023 – Mar. 2023",
     type: "Internship",
-    icon: "🏛️",
+    icon: "🏢",
     points: [
-      "Developed responsive UI components using React and Tailwind CSS",
-      "Collaborated with senior developers on production-grade features",
-      "Optimized page load performance through code splitting and lazy loading",
-      "Participated in agile sprints and daily stand-ups",
+      "Proficient in web development using HTML, CSS, Bootstrap, and JavaScript",
+      "Designed and developed responsive and interactive web pages using CSS3 and JavaScript",
+      "Worked on building and editing client-side interfaces and layouts",
+      "Trained on client-side scripting principles and UI development fundamentals",
     ],
   },
-]
+];
 
 export const navLinks = [
   { label: "About", href: "#about" },
@@ -199,4 +194,4 @@ export const navLinks = [
   { label: "Skills", href: "#skills" },
   { label: "Experience", href: "#experience" },
   { label: "Contact", href: "#contact" },
-]
+];

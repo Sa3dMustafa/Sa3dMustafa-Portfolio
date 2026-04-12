@@ -1,10 +1,10 @@
-﻿import React from 'react'
-import { experience } from '../data'
-import { useReveal } from '../hooks/useReveal'
-import './Experience.css'
+﻿import React from "react";
+import { experience } from "../data";
+import { useReveal } from "../hooks/useReveal";
+import "./Experience.css";
 
 function ExpCard({ exp }) {
-  const ref = useReveal()
+  const ref = useReveal();
   return (
     <div className="exp-card reveal" ref={ref}>
       <div className="exp-left">
@@ -32,39 +32,53 @@ function ExpCard({ exp }) {
         </ul>
       </div>
     </div>
-  )
+  );
 }
 
 function EducationCard() {
-  const ref = useReveal()
+  const ref = useReveal();
   return (
     <div className="exp-card reveal" ref={ref}>
       <div className="exp-left">
         <div className="exp-icon">🎓</div>
       </div>
+
       <div className="exp-content">
         <div className="exp-header">
           <div>
-            <h3 className="exp-title">B.Sc. Computer Science</h3>
-            <div className="exp-company">MET Academy - Modern Education Technologies</div>
+            <h3 className="exp-title">Bachelor of Computer Science</h3>
+
+            <div className="exp-company">
+              Misr Higher Institute of Commerce and Computers (M.E.T Academy),
+              Mansoura, Egypt
+            </div>
           </div>
+
           <div className="exp-right">
             <span className="exp-type">Education</span>
-            <span className="exp-period">2022 - Present</span>
+            <span className="exp-period">Sept. 2020 – Jul. 2024</span>
           </div>
         </div>
+
         <ul className="exp-points">
-          <li><span className="exp-dot" />Active member of IEEE and Google Developer Student Club</li>
-          <li><span className="exp-dot" />Led frontend development initiatives in student organizations</li>
-          <li><span className="exp-dot" />Focused on algorithms, data structures, and software engineering</li>
+          <li>
+            <span className="exp-dot" />
+            Grade: Very Good
+          </li>
+
+          <li>
+            <span className="exp-dot" />
+            Focused on Computer Science fundamentals, algorithms, and software
+            engineering
+          </li>
         </ul>
       </div>
     </div>
-  )
+  );
 }
 
 export default function Experience() {
-  const titleRef = useReveal()
+  const titleRef = useReveal();
 
   return (
     <section id="experience" className="section-pad">
@@ -74,7 +88,7 @@ export default function Experience() {
           <h2 className="section-title">
             Where I've been
             <br />
-            <span style={{ color: 'var(--teal)' }}>sharpening my craft</span>
+            <span style={{ color: "var(--teal)" }}>sharpening my craft</span>
           </h2>
         </div>
         <div className="experience-list">
@@ -85,5 +99,5 @@ export default function Experience() {
         </div>
       </div>
     </section>
-  )
+  );
 }
