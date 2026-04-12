@@ -1,7 +1,9 @@
 .hero {
   min-height: 100vh;
+  width: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   position: relative;
   overflow: hidden;
   padding: 65px 0 60px;
@@ -66,12 +68,12 @@
 }
 
 .hero-inner {
+  width: 100%;
+  padding: 30px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  /* gap: 60px; */
+  gap: 40px;
   align-items: center;
-  position: relative;
-  /* z-index: 1; */
 }
 
 .hero-available {
@@ -206,8 +208,8 @@
 
 .hero-image-glow {
   position: absolute;
-  width: 300px;
-  height: 300px;
+  width: clamp(180px, 30vw, 300px);
+  height: clamp(180px, 30vw, 300px);
   border-radius: 50%;
   background: radial-gradient(circle, rgba(26, 188, 156, 0.12) 0%, transparent 70%);
   pointer-events: none;
@@ -215,9 +217,8 @@
 }
 
 .hero-avatar {
-  position: relative;
-  width: 550px;
-  height: 550px;
+  width: clamp(260px, 40vw, 520px);
+  height: clamp(260px, 40vw, 520px);
 }
 
 .avatar-svg {
@@ -251,6 +252,8 @@
 }
 
 .tech-chip {
+  max-width: 120px;
+  text-align: center;
   position: absolute;
   padding: 8px 14px;
   background: var(--bg-card);
@@ -265,28 +268,24 @@
 }
 
 .chip-1 {
-  top: -10px;
-  right: -20px;
-  animation-delay: 0s;
+  top: 13%;
+  right: 22%;
 }
+
 
 .chip-2 {
   top: 50%;
-  right: -30px;
-  transform: translateY(-50%);
-  animation-delay: 1s;
+  right: 13%;
 }
 
 .chip-3 {
-  bottom: 10px;
-  right: -10px;
-  animation-delay: 2s;
+  bottom: 6%;
+  right: 111px;
 }
 
 .chip-4 {
-  top: 22%;
-  left: -28px;
-  animation-delay: 1.5s;
+  top: 20%;
+  left: -5%;
 }
 
 .scroll-indicator {
@@ -311,36 +310,28 @@
   animation: float 2s ease-in-out infinite;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   .hero-inner {
-    grid-template-columns: 1fr;
-    gap: 48px;
-    text-align: center;
-  }
-
-  .hero-content {
-    order: 2;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column-reverse;
   }
 
-  .hero-image-wrap {
-    order: 1;
+  .hero-avatar {
+    width: 280px;
+    height: 280px;
   }
 
-  .code-snippet {
-    display: none;
+  .hero-image-ring {
+    width: 220px;
+    height: 220px;
   }
 
-  .hero-tagline {
-    max-width: 100%;
+  .hero-image-glow {
+    width: 200px;
+    height: 200px;
   }
 
-  .chip-1,
-  .chip-2,
-  .chip-3,
-  .chip-4 {
+  .tech-chip {
     display: none;
   }
 
@@ -351,23 +342,11 @@
 
 @media (max-width: 480px) {
   .hero-name {
-    font-size: 3rem;
-  }
-
-  .hero-ctas {
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 15px;
+    font-size: 2.5rem;
   }
 
   .hero-avatar {
-    width: 350px;
-    height: 350px;
-  }
-
-  .hero-image-ring {
-    width: 280px;
-    height: 280px;
+    width: 240px;
+    height: 240px;
   }
 }
