@@ -1,6 +1,7 @@
 ﻿import React, { useEffect, useRef, useState } from 'react'
 import { TypeAnimation } from 'react-type-animation'
 import './Hero.css'
+import avatar from '../assets/IMG_2360.png'
 
 const CODE_SNIPPETS = [
   { text: 'const ui = build(vision)', x: '5%', y: '18%', delay: 0 },
@@ -153,7 +154,7 @@ export default function HeroSection() {
           <div className="hero-image-glow" />
           <div className="hero-avatar">
             <img
-              src="/IMG_2360.png"
+              src={avatar}
               alt="Saad Mustafa"
               className="avatar-photo"
             />
