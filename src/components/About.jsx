@@ -1,4 +1,4 @@
-import React from 'react'
+﻿import React from 'react'
 import { useReveal } from '../hooks/useReveal'
 import './About.css'
 
@@ -12,7 +12,11 @@ export default function About() {
         <div className="about-grid">
           <div className="reveal" ref={ref1}>
             <div className="section-tag">About Me</div>
-            <h2 className="section-title">Crafting digital<br />experiences <span style={{color:'var(--teal)'}}>with purpose</span></h2>
+            <h2 className="section-title">
+              Crafting digital
+              <br />
+              experiences <span style={{ color: 'var(--teal)' }}>with purpose</span>
+            </h2>
             <p className="about-text">
               I'm <strong>Saad Mustafa</strong>, a passionate Frontend Developer from Egypt specializing in building
               high-performance, visually engaging web applications. I obsess over clean code, pixel-perfect
@@ -20,30 +24,30 @@ export default function About() {
             </p>
             <p className="about-text">
               Beyond code, I've led technical circles, mentored developers, and driven community growth
-              through IEEE and Google Developer Student Clubs — because great software is built by
+              through IEEE and Google Developer Student Clubs - because great software is built by
               great teams.
             </p>
             <div className="about-values">
-              {['Performance First', 'Clean Architecture', 'User-Centric Design', 'Continuous Learning'].map(v => (
-                <div key={v} className="value-chip">
+              {['Performance First', 'Clean Architecture', 'User-Centric Design', 'Continuous Learning'].map((value) => (
+                <div key={value} className="value-chip">
                   <span className="value-dot" />
-                  {v}
+                  {value}
                 </div>
               ))}
             </div>
             <div className="about-ctas">
               <a
-                href="mailto:saad@example.com"
+                href="#contact"
                 className="btn-primary"
                 style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}
               >
                 Let's Talk
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <path d="M2 8h12M10 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M2 8h12M10 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </a>
               <a
-                href="https://github.com/saadmustafa"
+                href="https://github.com/Sa3dMustafa"
                 target="_blank"
                 rel="noreferrer"
                 className="btn-outline"
@@ -59,7 +63,9 @@ export default function About() {
               <div className="about-card-header">
                 <span>~/saad-mustafa</span>
                 <div className="card-dots">
-                  <span /><span /><span />
+                  <span />
+                  <span />
+                  <span />
                 </div>
               </div>
               <div className="about-code">
@@ -80,15 +86,15 @@ export default function About() {
             <div className="about-badges">
               {[
                 { icon: '🎓', title: 'CS Student', sub: 'MET Academy' },
-                { icon: '⚡', title: 'IEEE', sub: 'Vice Head — Frontend' },
+                { icon: '⚡', title: 'IEEE', sub: 'Vice Head - Frontend' },
                 { icon: '🌐', title: 'GDSC', sub: 'Head of PR' },
                 { icon: '🏛️', title: 'NTI', sub: 'Intern' },
-              ].map(b => (
-                <div key={b.title} className="about-badge">
-                  <span className="badge-icon">{b.icon}</span>
+              ].map((badge) => (
+                <div key={badge.title} className="about-badge">
+                  <span className="badge-icon">{badge.icon}</span>
                   <div>
-                    <div className="badge-title">{b.title}</div>
-                    <div className="badge-sub">{b.sub}</div>
+                    <div className="badge-title">{badge.title}</div>
+                    <div className="badge-sub">{badge.sub}</div>
                   </div>
                 </div>
               ))}

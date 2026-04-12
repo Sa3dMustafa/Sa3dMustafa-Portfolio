@@ -1,4 +1,4 @@
-import React from 'react'
+﻿import React from 'react'
 import { experience } from '../data'
 import { useReveal } from '../hooks/useReveal'
 import './Experience.css'
@@ -23,8 +23,11 @@ function ExpCard({ exp }) {
           </div>
         </div>
         <ul className="exp-points">
-          {exp.points.map((p, j) => (
-            <li key={j}><span className="exp-dot" />{p}</li>
+          {exp.points.map((point, index) => (
+            <li key={index}>
+              <span className="exp-dot" />
+              {point}
+            </li>
           ))}
         </ul>
       </div>
@@ -43,11 +46,11 @@ function EducationCard() {
         <div className="exp-header">
           <div>
             <h3 className="exp-title">B.Sc. Computer Science</h3>
-            <div className="exp-company">MET Academy — Modern Education Technologies</div>
+            <div className="exp-company">MET Academy - Modern Education Technologies</div>
           </div>
           <div className="exp-right">
             <span className="exp-type">Education</span>
-            <span className="exp-period">2022 – Present</span>
+            <span className="exp-period">2022 - Present</span>
           </div>
         </div>
         <ul className="exp-points">
@@ -69,7 +72,8 @@ export default function Experience() {
         <div className="section-header reveal" ref={titleRef}>
           <div className="section-tag">Experience</div>
           <h2 className="section-title">
-            Where I've been<br />
+            Where I've been
+            <br />
             <span style={{ color: 'var(--teal)' }}>sharpening my craft</span>
           </h2>
         </div>

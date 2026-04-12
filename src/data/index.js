@@ -1,4 +1,4 @@
-export const projects = [
+﻿export const projects = [
   {
     id: "hospitify",
     title: "Hospitify",
@@ -6,19 +6,23 @@ export const projects = [
     shortDesc:
       "Revolutionizing patient management with intelligent automation and real-time data insights.",
     problem:
-      "Healthcare facilities struggle with fragmented patient records, slow triage, and inefficient resource management — costing time and lives.",
+      "Healthcare facilities struggle with fragmented patient records, slow triage, and inefficient resource management - costing time and lives.",
     solution:
       "Built a full-stack AI-powered healthcare platform with intelligent patient triage, real-time dashboards, and automated workflows to streamline clinical operations.",
     impact:
       "Reduced administrative overhead by 40%, improved patient processing speed, and delivered a HIPAA-compliant system trusted by medical staff.",
     tech: [
       "React",
-      "Next.js",
+      "Tailwind CSS",
+      "Context API",
+      "Axios",
+      "Chart.js",
       "Node.js",
       "MongoDB",
-      "OpenAI API",
-      "Tailwind CSS",
-      "REST API",
+      "Express.js",
+      "Python",
+      "TensorFlow",
+      "Flask",
     ],
     achievements: [
       "AI-driven patient triage and risk assessment",
@@ -26,8 +30,6 @@ export const projects = [
       "Secure medical records with role-based access",
       "Automated appointment and billing workflows",
     ],
-    // github: 'https://github.com/saadmustafa',
-    // demo: 'https://hospitify-demo.vercel.app',
     color: "#1ABC9C",
     emoji: "🏥",
   },
@@ -38,7 +40,7 @@ export const projects = [
     shortDesc:
       "A beautifully crafted, lightning-fast Quran application with multilingual support and audio recitation.",
     problem:
-      "Most Quran apps are bloated, slow, or inaccessible — failing to deliver a smooth, respectful reading experience across devices.",
+      "Most Quran apps are bloated, slow, or inaccessible - failing to deliver a smooth, respectful reading experience across devices.",
     solution:
       "Engineered a performance-first Quran app with SSG/ISR via Next.js, full Arabic text support, audio recitation, and multilingual translations.",
     impact:
@@ -48,15 +50,13 @@ export const projects = [
       "React",
       "Alquran Cloud API",
       "Tailwind CSS",
-      "Framer Motion",
-      "PWA",
     ],
     achievements: [
       "98+ Lighthouse performance score",
       "Server-side rendering with ISR for instant loads",
       "40+ translation languages supported",
       "Audio recitation by multiple Qaris",
-      "Progressive Web App — works offline",
+      "Progressive Web App - works offline",
     ],
     github: "https://github.com/Sa3dMustafa/random-ayah-from-quran",
     demo: "https://random-ayah-from-quran.vercel.app/",
@@ -84,11 +84,35 @@ export const projects = [
       "Component-based architecture for scalability",
     ],
     github: "https://github.com/Sa3dMustafa/E-commerce1",
-    // demo: "https://ecommerce-saad.vercel.app",
     color: "#1ABC9C",
     emoji: "🛒",
   },
-];
+  {
+    id: "guess-my-number",
+    title: "Guess My Number",
+    tagline: "Interactive JavaScript Guessing Game",
+    shortDesc:
+      "A fun browser-based number guessing game that challenges players to find a hidden number with smart hints and scoring system.",
+    problem:
+      "Beginners often struggle to understand how JavaScript logic, DOM manipulation, and state management work together in real interactive applications.",
+    solution:
+      "Built an interactive guessing game using vanilla JavaScript that demonstrates DOM updates, event handling, conditional logic, and game state management in a simple UI.",
+    impact:
+      "Improved understanding of core JavaScript concepts such as events, randomization, and dynamic UI updates through an engaging hands-on project.",
+    tech: ["JavaScript", "HTML", "CSS"],
+    achievements: [
+      "Random number generation between custom range",
+      "Dynamic UI feedback based on user input",
+      "Score and high score tracking system",
+      "Game reset functionality with improved UX",
+      "Real-time DOM manipulation and event handling",
+    ],
+    github: "https://github.com/Sa3dMustafa/Guess-game",
+    demo: "https://sa3dmustafa.github.io/Guess-game/",
+    color: "#60b347",
+    emoji: "🎯",
+  },
+]
 
 export const skills = {
   Frontend: [
@@ -105,11 +129,14 @@ export const skills = {
   ],
 
   Tools: [
-    { name: "Git & GitHub", icon: "https://cdn.simpleicons.org/github" },
     { name: "Vite", icon: "https://cdn.simpleicons.org/vite" },
     { name: "Figma", icon: "https://cdn.simpleicons.org/figma" },
     { name: "Postman", icon: "https://cdn.simpleicons.org/postman" },
-    { name: "VS Code", icon: "https://img.icons8.com/?size=100&id=9OGIyU8hrxW5&format=png&color=000000" }, 
+    {
+      name: "VS Code",
+      icon: "https://img.icons8.com/?size=100&id=9OGIyU8hrxW5&format=png&color=000000",
+    },
+    { name: "Git & GitHub", icon: "https://cdn.simpleicons.org/github" },
     { name: "Vercel", icon: "https://cdn.simpleicons.org/vercel" },
   ],
 
@@ -119,13 +146,13 @@ export const skills = {
     { name: "Python", icon: "https://cdn.simpleicons.org/python" },
     { name: "C++", icon: "https://cdn.simpleicons.org/cplusplus" },
   ],
-};
+}
 
 export const leadership = [
   {
-    role: "Vice Head — Frontend Circle",
-    org: "IEEE ManCSC - Mansoura university",
-    period: "Nov 2023 – Jul 2024",
+    role: "Vice Head - Frontend Circle",
+    org: "IEEE ManCSC - Mansoura University",
+    period: "Nov 2023 - Jul 2024",
     icon: "⚡",
     color: "#1ABC9C",
     points: [
@@ -137,8 +164,8 @@ export const leadership = [
   },
   {
     role: "Head of Public Relations",
-    org: "Google Developer Student Club — MET Academy",
-    period: "Sep 2023 – Jul 2024",
+    org: "Google Developer Student Club - MET Academy",
+    period: "Sep 2023 - Jul 2024",
     icon: "🌐",
     color: "#16a085",
     points: [
@@ -148,12 +175,12 @@ export const leadership = [
       "Coordinated media coverage for Google DevFest and workshops",
     ],
   },
-];
+]
 
 export const experience = [
   {
     title: "Frontend Developer Intern",
-    company: "NTI — National Telecommunication Institute",
+    company: "NTI - National Telecommunication Institute",
     period: "Summer 2023",
     type: "Internship",
     icon: "🏛️",
@@ -164,7 +191,7 @@ export const experience = [
       "Participated in agile sprints and daily stand-ups",
     ],
   },
-];
+]
 
 export const navLinks = [
   { label: "About", href: "#about" },
@@ -172,4 +199,4 @@ export const navLinks = [
   { label: "Skills", href: "#skills" },
   { label: "Experience", href: "#experience" },
   { label: "Contact", href: "#contact" },
-];
+]

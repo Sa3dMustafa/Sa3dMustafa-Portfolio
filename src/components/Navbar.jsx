@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { navLinks } from '../data'
+import { navLinks } from '../data/index'
 import './Navbar.css'
 
 export default function Navbar() {
@@ -12,6 +12,24 @@ export default function Navbar() {
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  useEffect(() => {
+    const onResize = () => {
+      if (window.innerWidth > 768) {
+        setMenuOpen(false)
+      }
+    }
+
+    window.addEventListener('resize', onResize)
+    return () => window.removeEventListener('resize', onResize)
+  }, [])
+
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : ''
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [menuOpen])
 
   useEffect(() => {
     const sections = navLinks.map(l => l.href.slice(1))
@@ -40,7 +58,36 @@ export default function Navbar() {
           <span className="logo-bracket">&lt;</span>SM<span className="logo-bracket">/&gt;</span>
         </a>
 
-        <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
+        <div
+          className={`nav-overlay ${menuOpen ? 'open' : ''}`}
+          onClick={() => setMenuOpen(false)}
+          aria-hidden={!menuOpen}
+        />
+
+        <ul
+          id="primary-navigation"
+          className={`nav-links ${menuOpen ? 'open' : ''}`}
+          aria-hidden={!menuOpen}
+        >
+          <li className="nav-mobile-head">
+            <div className="nav-mobile-brand">
+              <span className="logo-bracket">&lt;</span>SM<span className="logo-bracket">/&gt;</span>
+            </div>
+            {/* <button
+              type="button"
+              className="nav-close"
+              onClick={() => setMenuOpen(false)}
+              aria-label="Close menu"
+            >
+              <span />
+              <span />
+            </button> */}
+          </li>
+
+          {/* <li className="nav-mobile-copy">
+            Frontend developer crafting polished, high-performance web experiences.
+          </li> */}
+
           {navLinks.map(link => (
             <li key={link.href}>
               <a
@@ -63,7 +110,13 @@ export default function Navbar() {
           </li>
         </ul>
 
-        <button className="menu-btn" onClick={() => setMenuOpen(o => !o)} aria-label="Toggle menu">
+        <button
+          className="menu-btn"
+          onClick={() => setMenuOpen(open => !open)}
+          aria-label="Toggle menu"
+          aria-expanded={menuOpen}
+          aria-controls="primary-navigation"
+        >
           <span className={menuOpen ? 'line open1' : 'line'} />
           <span className={menuOpen ? 'line open2' : 'line'} />
           <span className={menuOpen ? 'line open3' : 'line'} />
