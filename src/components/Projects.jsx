@@ -1,4 +1,4 @@
-﻿import React, { useState } from "react";
+﻿import React, { useState, useMemo } from "react";
 import { projects } from "../data";
 import { useReveal } from "../hooks/useReveal";
 import ProjectModal from "./ProjectModal";
@@ -6,18 +6,7 @@ import "./Projects.css";
 
 const normalizeTech = (tech) => tech.toLowerCase().replace(/\s|\./g, "");
 
-const filterMap = {
-  All: () => true,
-  React: (project) =>
-    project.tech.some((tech) => normalizeTech(tech).includes("react")),
-  "Next.js": (project) =>
-    project.tech.some((tech) => normalizeTech(tech).includes("nextjs")),
-  JavaScript: (project) =>
-    project.tech.some((tech) => {
-      const normalizedTech = normalizeTech(tech);
-      return normalizedTech.includes("javascript") || normalizedTech === "js";
-    }),
-};
+const FILTERS = ["All", "React", "Next.js", "JavaScript", "HTML&CSS"];
 
 function ProjectCard({ project, onOpen, index }) {
   const ref = useReveal();
@@ -28,71 +17,53 @@ function ProjectCard({ project, onOpen, index }) {
       ref={ref}
       onClick={() => onOpen(project)}
     >
-      <div
-        className="project-card-glow"
-        style={{ "--card-color": project.color }}
-      />
-
-      <div className="project-emoji">{project.emoji}</div>
-
-      <div className="project-top">
-        <h3 className="project-title">{project.title}</h3>
-        <div className="project-tagline">{project.tagline}</div>
+      <div className="project-image">
+        <img src={project.images?.[0]} alt={project.title} />
+        <div className="project-image-overlay" />
       </div>
 
-      <p className="project-desc">{project.shortDesc}</p>
+      <div className="project-content">
+        <div className="project-top">
+          <div className="project-emoji">
+            {project.emoji}
+            <h3 className="project-title">{project.title}</h3>
+          </div>
+          <div className="project-tagline">{project.tagline}</div>
+        </div>
 
-      <div className="project-tech">
-        {project.tech.slice(0, 4).map((tech) => (
-          <span key={tech} className="tech-badge">
-            {tech}
-          </span>
-        ))}
+        <p className="project-desc">{project.shortDesc}</p>
 
-        {project.tech.length > 4 && (
-          <span className="tech-badge">+{project.tech.length - 4}</span>
-        )}
-      </div>
+        <div className="project-tech">
+          {project.tech.slice(0, 6).map((tech) => (
+            <span key={tech} className="tech-badge">
+              {tech}
+            </span>
+          ))}
+        </div>
 
-      <div className="project-actions">
-        {project.demo && <button
-          type="button"
-          className="proj-btn proj-btn-primary"
-          onClick={(event) => {
-            event.stopPropagation();
-            if (project.demo) {
-              window.open(project.demo, "_blank", "noopener,noreferrer");
-            }
-          }}
-          disabled={!project.demo}
-        >
-          Live Demo -&gt;
-        </button>}
+        <div className="project-actions">
+          {project.demo && (
+            <a
+              href={project.demo}
+              target="_blank"
+              rel="noreferrer"
+              className="btn-primary"
+            >
+              Live Demo →
+            </a>
+          )}
 
-        {project.github && <button
-          type="button"
-          className="proj-btn proj-btn-ghost"
-          onClick={(event) => {
-            event.stopPropagation();
-            if (project.github) {
-              window.open(project.github, "_blank", "noopener,noreferrer");
-            }
-          }}
-          disabled={!project.github}
-        >
-          GitHub
-        </button>}
-
-        <button
-          type="button"
-          className="proj-btn-arrow"
-          onClick={(event) => {
-            event.stopPropagation();
-            onOpen(project);
-          }}
-        >
-          Details -&gt;
-        </button>
+          {project.github && (
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noreferrer"
+              className="btn-outline"
+            >
+              GitHub
+            </a>
+          )}
+        </div>
       </div>
     </div>
   );
@@ -103,18 +74,40 @@ export default function Projects() {
   const [modal, setModal] = useState(null);
   const titleRef = useReveal();
 
-  const filters = ["All", "React", "Next.js", "JavaScript"];
-  const filtered = projects.filter(filterMap[activeFilter] ?? filterMap.All);
+  const filterMap = useMemo(
+    () => ({
+      All: () => true,
+
+      React: (project) => normalizeTech(project.primaryTech || "") === "react",
+
+      "Next.js": (project) =>
+        normalizeTech(project.primaryTech || "") === "nextjs",
+
+      JavaScript: (project) => {
+        const tech = normalizeTech(project.primaryTech || "");
+        return ["javascript", "js"].includes(tech);
+      },
+
+      "HTML&CSS": (project) => {
+        const tech = normalizeTech(project.primaryTech || "");
+        return ["html", "css"].includes(tech);
+      },
+    }),
+    [],
+  );
+  const filtered = useMemo(() => {
+    const fn = filterMap[activeFilter] || filterMap.All;
+    return projects.filter(fn);
+  }, [activeFilter, filterMap]);
 
   return (
     <section id="projects" className="section-pad">
-      <div className="container">
+      <div className="projects-container">
         <div className="section-header reveal" ref={titleRef}>
           <div className="section-tag">Featured Projects</div>
 
           <h2 className="section-title">
-            Work that speaks
-            <br />
+            Work that speaks <br />
             <span style={{ color: "var(--teal)" }}>for itself</span>
           </h2>
 
@@ -124,11 +117,14 @@ export default function Projects() {
           </p>
         </div>
 
+        {/* Filters */}
         <div className="project-filters">
-          {filters.map((filter) => (
+          {FILTERS.map((filter) => (
             <button
               key={filter}
-              className={`filter-btn ${activeFilter === filter ? "active" : ""}`}
+              className={`filter-btn ${
+                activeFilter === filter ? "active" : ""
+              }`}
               onClick={() => setActiveFilter(filter)}
             >
               {filter}
@@ -136,6 +132,7 @@ export default function Projects() {
           ))}
         </div>
 
+        {/* Grid */}
         <div className="projects-grid">
           {filtered.map((project, index) => (
             <ProjectCard
@@ -148,9 +145,7 @@ export default function Projects() {
         </div>
       </div>
 
-      {modal && (
-        <ProjectModal project={modal} onClose={() => setModal(null)} />
-      )}
+      {modal && <ProjectModal project={modal} onClose={() => setModal(null)} />}
     </section>
   );
 }

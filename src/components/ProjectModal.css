@@ -13,8 +13,13 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .modal-panel {
@@ -32,8 +37,15 @@
 }
 
 @keyframes slideUp {
-  from { opacity: 0; transform: translateY(40px) scale(0.97); }
-  to { opacity: 1; transform: translateY(0) scale(1); }
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 .modal-close {
@@ -164,9 +176,17 @@
   background: var(--border);
 }
 
-.screenshot-bar span:nth-child(1) { background: #ff5f57; }
-.screenshot-bar span:nth-child(2) { background: #ffbd2e; }
-.screenshot-bar span:nth-child(3) { background: #28c840; }
+.screenshot-bar span:nth-child(1) {
+  background: #ff5f57;
+}
+
+.screenshot-bar span:nth-child(2) {
+  background: #ffbd2e;
+}
+
+.screenshot-bar span:nth-child(3) {
+  background: #28c840;
+}
 
 .url-bar {
   flex: 1;
@@ -225,11 +245,61 @@
   .modal-header {
     padding: 24px 20px 20px;
   }
+
   .modal-body {
     padding: 20px;
   }
+
   .modal-footer {
     padding: 20px;
     flex-wrap: wrap;
   }
+}
+
+.modal-gallery {
+  margin: 20px 32px;
+}
+
+.gallery-main-img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.gallery-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.gallery-controls button {
+  background: var(--bg-2);
+  color: white;
+  border: 1px solid var(--border);
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.gallery-thumbs {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.gallery-thumbs img {
+  width: 60px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0.6;
+  border: 1px solid transparent;
+}
+
+.gallery-thumbs img.active {
+  opacity: 1;
+  border-color: var(--teal);
 }

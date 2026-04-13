@@ -1,4 +1,44 @@
-﻿export const projects = [
+﻿import { image } from "framer-motion/client";
+
+export const projects = [
+  {
+    id: "saad-mustafa-portfolio",
+    title: "Saad Mustafa Portfolio",
+    tagline: "Premium React Developer Portfolio",
+    shortDesc:
+      "A modern, high-performance developer portfolio showcasing projects, skills, and experience with smooth animations and responsive UI.",
+    problem:
+      "Most developer portfolios are either outdated, slow, or lack interactive storytelling, making it hard to properly showcase skills and projects in a compelling way.",
+    solution:
+      "Built a production-ready portfolio using React + Vite with a modular architecture, smooth animations, dark/light mode, interactive project modals, and reusable data-driven components.",
+    impact:
+      "Provides a fast, responsive, and visually engaging experience that improves personal branding, increases recruiter engagement, and clearly communicates technical expertise.",
+    primaryTech: "React",
+    tech: [
+      "React",
+      "Vite",
+      "CSS3",
+      "JavaScript (ES6+)",
+      "Framer Motion",
+      "Intersection Observer API",
+      "react-type-animation",
+      "LocalStorage API",
+    ],
+    achievements: [
+      "Dark / Light mode with persistent theme switching",
+      "Animated hero section with typing and parallax effects",
+      "Filterable projects grid with modal previews",
+      "Reusable data-driven architecture (single source of truth)",
+      "Fully responsive mobile-first design",
+      "Scroll-based reveal animations",
+      "Loading screen + smooth UX transitions",
+    ],
+    github: "https://github.com/Sa3dMustafa/Sa3dMustafa-Portfolio",
+    demo: "https://sa3d-mustafa-portfolio.vercel.app/",
+    color: "#1ABC9C",
+    emoji: "💼",
+    images: ["/src/assets/Portfolio/Screenshot 2026-04-13 223053.png"],
+  },
   {
     id: "hospitify",
     title: "Hospitify",
@@ -11,6 +51,7 @@
       "Built a full-stack AI-powered healthcare platform with intelligent patient triage, real-time dashboards, and automated workflows to streamline clinical operations.",
     impact:
       "Reduced administrative overhead by 40%, improved patient processing speed, and delivered a HIPAA-compliant system trusted by medical staff.",
+    primaryTech: "React",
     tech: [
       "React",
       "Tailwind CSS",
@@ -32,6 +73,16 @@
     ],
     color: "#1ABC9C",
     emoji: "🏥",
+    images: [
+      "/src/assets/Graduation-project/Screenshot 2026-04-14 001735.png",
+      "/src/assets/Graduation-project/IMG-20240502-WA0001.jpg",
+      "/src/assets/Graduation-project/IMG-20240502-WA0002.jpg",
+      "/src/assets/Graduation-project/IMG-20240502-WA0003.jpg",
+      "/src/assets/Graduation-project/IMG-20240502-WA0004.jpg",
+      "/src/assets/Graduation-project/IMG-20240502-WA0005.jpg",
+      "/src/assets/Graduation-project/IMG-20240502-WA0006.jpg",
+      "/src/assets/Graduation-project/IMG-20240502-WA0007.jpg",
+    ],
   },
   {
     id: "quran-ayah",
@@ -45,42 +96,261 @@
       "Engineered a performance-first Quran app with SSG/ISR via Next.js, full Arabic text support, audio recitation, and multilingual translations.",
     impact:
       "Achieved 98+ Lighthouse scores, sub-second load times, and delivered a respectful, accessible spiritual experience to thousands of users.",
-    tech: ["Next.js", "React", "Alquran Cloud API", "Tailwind CSS"],
+    primaryTech: "Next.js",
+    tech: ["Next.js", "Alquran Cloud API", "Tailwind CSS"],
     achievements: [
       "98+ Lighthouse performance score",
       "Server-side rendering with ISR for instant loads",
-      "40+ translation languages supported",
       "Audio recitation by multiple Qaris",
-      "Progressive Web App - works offline",
     ],
     github: "https://github.com/Sa3dMustafa/random-ayah-from-quran",
     demo: "https://random-ayah-from-quran.vercel.app/",
     color: "#16a085",
     emoji: "📖",
+    images: ["/src/assets/Ayah From Quran/Screenshot 2026-04-13 222724.png"],
+  },
+  {
+    id: "satellite-tracking-system",
+    title: "Satellite Tracking & Geospatial Explorer",
+    tagline: "Real-Time Satellite Distance & Overpass Analysis",
+
+    shortDesc:
+      "A geospatial web application that allows users to interact with maps, select coordinates, and calculate real-time satellite distance and overpass timing using live orbital data.",
+
+    problem:
+      "Accessing real-time satellite data and calculating spatial relationships (distance, overpass) requires complex tools and is not easily accessible through intuitive web interfaces.",
+
+    solution:
+      "Built a full-stack geospatial system using React and Flask that integrates interactive maps with real-time satellite TLE data, enabling users to select locations and compute satellite distance and overpass timing dynamically.",
+
+    impact:
+      "Simplified complex satellite computations into an intuitive UI, enabling real-time geospatial analysis and improving accessibility to orbital data for non-technical users.",
+    primaryTech: "React",
+    tech: [
+      "React",
+      "Leaflet.js",
+      "Custom Hooks",
+      "Context API",
+      "React Query",
+      "Flask",
+      "Python",
+      "Skyfield",
+      "REST API",
+      "MapTiler API",
+    ],
+
+    achievements: [
+      "Interactive map with dynamic coordinate selection",
+      "Custom hook for map lifecycle and event handling",
+      "Real-time satellite distance calculation using Skyfield",
+      "Satellite overpass prediction within 24 hours",
+      "Live TLE data integration from Celestrak",
+      "Full-stack integration (React + Flask API)",
+      "Popup-based UI for metadata input",
+      "Context-based global state management",
+      "Clean modular architecture with reusable hooks and services",
+    ],
+
+    github: "https://github.com/Sa3dMustafa/spectra-mappers-Project",
+    demo: "https://spectra-mappers-project.vercel.app/",
+
+    color: "#27AE60",
+    emoji: "🛰️",
+    images: [
+      "/src/assets/Satellite Tracking/Screenshot 2026-04-13 233016.png",
+      "/src/assets/Satellite Tracking/Screenshot 2026-04-13 233036.png",
+      "/src/assets/Satellite Tracking/Screenshot 2026-04-13 233044.png",
+    ],
   },
   {
     id: "CRUD",
     title: "CRUD Products Management System",
-    tagline: "React-Based Product Dashboard",
+    tagline: "Vanilla JS Product Management with LocalStorage",
+
     shortDesc:
-      "A responsive product management app built with React and JSON Server for handling CRUD operations efficiently.",
+      "A fully functional product management system built with pure JavaScript, featuring CRUD operations, search, multi-language support, and dark mode.",
+
     problem:
-      "Managing product data manually or with static UI lacks flexibility and scalability for real-world applications.",
+      "Managing product data efficiently without a backend can be challenging, especially when handling dynamic updates, search, and user preferences like themes and languages.",
+
     solution:
-      "Built a dynamic CRUD system using React with JSON-based backend simulation to manage products including adding, editing, deleting, and viewing details.",
+      "Developed a complete CRUD system using Vanilla JavaScript with LocalStorage for persistence, enabling users to create, update, delete, and search products dynamically with a responsive and interactive UI.",
+
     impact:
-      "Improved data handling workflow with a clean UI and efficient state management, making it easy to scale or connect to a real backend.",
-    tech: ["React", "CSS", "JSON Server"],
+      "Delivered a lightweight and fast product management solution with persistent storage, improved UX through theme switching and multilingual support, and demonstrated strong fundamentals in DOM manipulation and state handling.",
+    primaryTech: "JavaScript",
+    tech: ["React", "JavaScript", "HTML", "CSS", "LocalStorage"],
+
     achievements: [
-      "Full CRUD operations (Add, Edit, Delete, View)",
-      "Dynamic routing with React Router",
-      "Product details page with structured data display",
-      "Local JSON database using db.json",
-      "Component-based architecture for scalability",
+      "Full CRUD functionality (Create, Read, Update, Delete)",
+      "Persistent data storage using LocalStorage",
+      "Dynamic search by title and category",
+      "Multi-language support (English & Arabic)",
+      "Dark & Light mode with saved preferences",
+      "Real-time total price calculation",
+      "Bulk product creation using count feature",
+      "Clean DOM manipulation and state handling",
     ],
     github: "https://github.com/Sa3dMustafa/E-commerce1",
+    demo: "https://sa3dmustafa.github.io/CRUD-System/",
     color: "#1ABC9C",
     emoji: "🛒",
+    images: [
+      "/src/assets/CRUD/Screenshot 2026-04-14 000012.png",
+      "/src/assets/CRUD/Screenshot 2026-04-14 000026.png",
+      "/src/assets/CRUD/Screenshot 2026-04-14 000033.png",
+    ],
+  },
+
+  {
+    id: "admin-dashboard",
+    title: "Admin Dashboard UI",
+    tagline: "Modern Multi-Page Dashboard Interface",
+    shortDesc:
+      "A responsive admin dashboard UI featuring analytics, user management, and file organization in a clean modern layout.",
+
+    problem:
+      "Many beginner dashboards lack scalability, proper layout structure, and reusable components, making them unrealistic for production use.",
+
+    solution:
+      "Designed and developed a fully responsive multi-page admin dashboard using reusable components, structured layout system, and modern UI patterns.",
+
+    impact:
+      "Strengthened real-world UI architecture skills, improved responsive design handling, and delivered a scalable dashboard suitable for production-level expansion.",
+    primaryTech: "HTML",
+    tech: [
+      "HTML",
+      "CSS",
+      "Flexbox",
+      "CSS Grid",
+      "Font Awesome",
+      "Normalize.css",
+    ],
+
+    achievements: [
+      "Fully responsive sidebar navigation",
+      "Multi-page dashboard structure",
+      "Analytics and statistics UI sections",
+      "User profile and settings layout",
+      "Projects, courses, and file management pages",
+      "Pricing plans and billing UI",
+      "Search and notification system UI",
+      "Consistent and reusable design system",
+    ],
+
+    github: "https://github.com/Sa3dMustafa/Template-4/tree/main",
+    demo: "https://sa3dmustafa.github.io/Template-4/",
+    color: "#3498DB",
+    emoji: "📊",
+    images: ["/src/assets/Admin Dashboard UI/Screenshot 2026-04-13 225619.png"],
+  },
+
+  {
+    id: "multi-section-template",
+    title: "Multi-Section Responsive Website",
+    tagline: "Modern HTML & CSS Mega UI Template",
+
+    shortDesc:
+      "A fully responsive multi-section website template featuring advanced UI components like mega menu, dashboards, pricing plans, and interactive layouts.",
+
+    problem:
+      "Most beginner templates are limited to simple layouts and lack real-world UI components like mega menus, complex sections, and scalable design systems.",
+
+    solution:
+      "Developed a complete multi-section responsive website using pure HTML and CSS, implementing advanced UI patterns such as mega menus, dynamic sections, responsive grids, and modern layout techniques.",
+
+    impact:
+      "Significantly improved UI structuring and CSS architecture skills, and created a production-level template that simulates real-world website complexity.",
+    primaryTech: "HTML",
+    tech: [
+      "HTML",
+      "CSS",
+      "Flexbox",
+      "CSS Grid",
+      "Font Awesome",
+      "Google Fonts",
+      "Normalize.css",
+    ],
+
+    achievements: [
+      "Advanced mega menu navigation system",
+      "Fully responsive multi-section layout",
+      "Interactive landing section with slider",
+      "Articles, gallery, and features sections",
+      "Testimonials and team members UI",
+      "Services, skills, and work steps sections",
+      "Pricing plans and subscription UI",
+      "Events countdown and stats section",
+      "Video preview system",
+      "Clean and scalable CSS architecture",
+    ],
+
+    github: "https://github.com/Sa3dMustafa/Templete-3/tree/main",
+    demo: "https://sa3dmustafa.github.io/Templete-3/",
+
+    color: "#E67E22",
+    emoji: "🧩",
+    images: [
+      "/src/assets/Multi-Section/Screenshot 2026-04-13 231443.png",
+      "/src/assets/Multi-Section/Screenshot 2026-04-13 231503.png",
+      "/src/assets/Multi-Section/Screenshot 2026-04-13 231515.png",
+      "/src/assets/Multi-Section/Screenshot 2026-04-13 231529.png",
+      "/src/assets/Multi-Section/Screenshot 2026-04-13 231539.png",
+      "/src/assets/Multi-Section/Screenshot 2026-04-13 231548.png",
+      "/src/assets/Multi-Section/Screenshot 2026-04-13 231557.png",
+      "/src/assets/Multi-Section/Screenshot 2026-04-13 231611.png",
+      "/src/assets/Multi-Section/Screenshot 2026-04-13 231623.png",
+      "/src/assets/Multi-Section/Screenshot 2026-04-13 231633.png",
+      "/src/assets/Multi-Section/Screenshot 2026-04-13 231640.png",
+      "/src/assets/Multi-Section/Screenshot 2026-04-13 231652.png",
+      "/src/assets/Multi-Section/Screenshot 2026-04-13 231705.png",
+    ],
+  },
+
+  {
+    id: "kaspar-template",
+    title: "Kaspar Template Website",
+    tagline: "Modern Responsive Landing Page",
+    shortDesc:
+      "A fully responsive multi-section landing page built with modern UI/UX principles and smooth navigation experience.",
+
+    problem:
+      "Most static templates fail to provide a smooth user experience, modern layout structure, and full responsiveness across devices.",
+
+    solution:
+      "Built a clean and responsive landing page with structured sections, smooth scrolling, and modern layout using Flexbox and CSS Grid.",
+
+    impact:
+      "Improved responsive design skills, enhanced layout structuring ability, and delivered a portfolio-ready modern landing page.",
+    primaryTech: "HTML",
+    tech: [
+      "HTML",
+      "CSS",
+      "Flexbox",
+      "CSS Grid",
+      "Font Awesome",
+      "Google Fonts",
+    ],
+
+    achievements: [
+      "Fully responsive multi-section layout",
+      "Animated landing slider",
+      "Smooth scrolling navigation",
+      "Portfolio gallery grid system",
+      "Testimonials and skills section UI",
+      "Pricing and contact sections",
+      "Clean and modern UI design",
+    ],
+
+    github: "https://github.com/Sa3dMustafa/Kaspar-Templete/tree/main",
+    demo: "https://sa3dmustafa.github.io/Kaspar-Templete/",
+    color: "#9B59B6",
+    emoji: "🌐",
+    images: [
+      "/src/assets/Kaspar Template Website/Screenshot 2026-04-13 225224.png",
+      "/src/assets/Kaspar Template Website/Screenshot 2026-04-13 225245.png",
+      "/src/assets/Kaspar Template Website/Screenshot 2026-04-13 225300.png",
+    ],
   },
   {
     id: "guess-my-number",
@@ -94,6 +364,7 @@
       "Built an interactive guessing game using vanilla JavaScript that demonstrates DOM updates, event handling, conditional logic, and game state management in a simple UI.",
     impact:
       "Improved understanding of core JavaScript concepts such as events, randomization, and dynamic UI updates through an engaging hands-on project.",
+    primaryTech: "JavaScript",
     tech: ["JavaScript", "HTML", "CSS"],
     achievements: [
       "Random number generation between custom range",
@@ -106,6 +377,7 @@
     demo: "https://sa3dmustafa.github.io/Guess-game/",
     color: "#60b347",
     emoji: "🎯",
+    images: ["/src/assets/Gusse-game/Screenshot 2026-04-13 222558.png"],
   },
 ];
 
