@@ -93,14 +93,8 @@ To swap the profile image, replace the SVG illustration inside `Hero.jsx`'s `.he
 ## 🔧 Tech Stack
 
 - **React 24** — UI library
-- **Vite 5** — Build tool
 - **Framer Motion** — Animation library (available, extend as needed)
 - **react-type-animation** — Typing effect in hero
 - **CSS Variables** — Design tokens for theming
 - **IntersectionObserver** — Scroll reveal (no heavy library)
 
----
-
-## 📄 License
-
-MIT — free to use and adapt.
