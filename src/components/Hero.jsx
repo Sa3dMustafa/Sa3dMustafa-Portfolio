@@ -173,7 +173,7 @@ export default function HeroSection() {
           </div>
 
           <div className="hero-ctas">
-            <a className="btn-primary" href="/cv.pdf" download>
+            <a className="btn-primary" href="/SaadMustafa-CV(Front-End-Developer).pdf" download>
               Download My Resume 📩
             </a>
             <button
