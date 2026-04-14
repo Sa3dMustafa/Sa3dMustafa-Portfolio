@@ -2,6 +2,7 @@
 import { TypeAnimation } from "react-type-animation";
 import "./Hero.css";
 import avatar from "../../public/assets/myphoto.png";
+import { FaFileDownload } from "react-icons/fa";
 
 const CODE_SNIPPETS = [
   { text: "const ui = build(vision)", x: "5%", y: "18%", delay: 0 },
@@ -174,7 +175,7 @@ export default function HeroSection() {
 
           <div className="hero-ctas">
             <a className="btn-primary" href="/SaadMustafa-CV(Front-End-Developer).pdf" download>
-              Download My Resume 📩
+              Download My Resume <FaFileDownload />
             </a>
             <button
               className="btn-outline"
