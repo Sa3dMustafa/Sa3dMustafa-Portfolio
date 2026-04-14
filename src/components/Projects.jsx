@@ -4,7 +4,8 @@ import { useReveal } from "../hooks/useReveal";
 import ProjectModal from "./ProjectModal";
 import "./Projects.css";
 
-const normalizeTech = (tech) => tech.toLowerCase().replace(/\s|\./g, "");
+const normalizeTech = (tech) =>
+  tech.toLowerCase().replace(/\s|\./g, "");
 
 const FILTERS = ["All", "React", "Next.js", "JavaScript", "HTML&CSS"];
 
@@ -72,13 +73,17 @@ function ProjectCard({ project, onOpen, index }) {
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState("All");
   const [modal, setModal] = useState(null);
+
+  const [visibleCount, setVisibleCount] = useState(4);
+
   const titleRef = useReveal();
 
   const filterMap = useMemo(
     () => ({
       All: () => true,
 
-      React: (project) => normalizeTech(project.primaryTech || "") === "react",
+      React: (project) =>
+        normalizeTech(project.primaryTech || "") === "react",
 
       "Next.js": (project) =>
         normalizeTech(project.primaryTech || "") === "nextjs",
@@ -93,12 +98,25 @@ export default function Projects() {
         return ["html", "css"].includes(tech);
       },
     }),
-    [],
+    []
   );
+
   const filtered = useMemo(() => {
     const fn = filterMap[activeFilter] || filterMap.All;
     return projects.filter(fn);
   }, [activeFilter, filterMap]);
+
+  const visibleProjects = filtered.slice(0, visibleCount);
+
+  const hasMore = visibleCount < filtered.length;
+
+  const loadMore = () => {
+    setVisibleCount((prev) => prev + 5);
+  };
+
+  const toggleAll = () => {
+    setVisibleCount(hasMore ? filtered.length : 5);
+  };
 
   return (
     <section id="projects" className="section-pad">
@@ -125,7 +143,10 @@ export default function Projects() {
               className={`filter-btn ${
                 activeFilter === filter ? "active" : ""
               }`}
-              onClick={() => setActiveFilter(filter)}
+              onClick={() => {
+                setActiveFilter(filter);
+                setVisibleCount(4);
+              }}
             >
               {filter}
             </button>
@@ -134,7 +155,7 @@ export default function Projects() {
 
         {/* Grid */}
         <div className="projects-grid">
-          {filtered.map((project, index) => (
+          {visibleProjects.map((project, index) => (
             <ProjectCard
               key={project.id}
               project={project}
@@ -143,9 +164,26 @@ export default function Projects() {
             />
           ))}
         </div>
+
+        {/* Controls */}
+        <div className="projects-controls">
+          {hasMore && (
+            <button className="btn-primary" onClick={loadMore}>
+              Load More ↓
+            </button>
+          )}
+
+          {!hasMore && filtered.length > 4 && (
+            <button className="btn-outline" onClick={toggleAll}>
+              Show Less ↑
+            </button>
+          )}
+        </div>
       </div>
 
-      {modal && <ProjectModal project={modal} onClose={() => setModal(null)} />}
+      {modal && (
+        <ProjectModal project={modal} onClose={() => setModal(null)} />
+      )}
     </section>
   );
 }

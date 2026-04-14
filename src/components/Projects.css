@@ -39,6 +39,13 @@
   gap: 24px;
 }
 
+.projects-controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 40px;
+}
+
 .project-card {
   position: relative;
   background: var(--bg-card);

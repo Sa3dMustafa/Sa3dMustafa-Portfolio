@@ -1,7 +1,7 @@
 ﻿import React, { useEffect, useRef, useState } from 'react'
 import { TypeAnimation } from 'react-type-animation'
 import './Hero.css'
-import avatar from '../assets/myphoto.png'
+import avatar from '../../public/assets/myphoto.png'
 
 const CODE_SNIPPETS = [
   { text: 'const ui = build(vision)', x: '5%', y: '18%', delay: 0 },
