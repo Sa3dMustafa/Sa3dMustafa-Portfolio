@@ -114,7 +114,7 @@ export const projects = [
     demo: "https://random-ayah-from-quran.vercel.app/",
     color: "#16a085",
     emoji: "📖",
-    images: ["/public/assets/AyahFromQuran/ayahApp.png"],
+    images: ["/assets/AyahFromQuran/ayahApp.png"],
   },
   {
     id: "satellite-tracking-system",
