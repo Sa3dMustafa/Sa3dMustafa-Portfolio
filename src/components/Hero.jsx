@@ -136,17 +136,17 @@ export default function HeroSection() {
           <div className="hero-role">
             <TypeAnimation
               sequence={[
-                "React Developer",
-                2000,
-                "Next.js Engineer",
-                2000,
-                "UI Engineer",
-                2000,
-                "Performance Optimizer",
-                2000,
-                "Frontend Architect",
-                2000,
-              ]}
+                      "Frontend Developer",
+                       2000,
+                      "React & Next.js Specialist",
+                       2000,
+                      "Modern UI Developer",
+                       2000,
+                      "Performance Optimization Expert",
+                       2000,
+                      "Scalable Frontend Architect",
+                       2000,
+                       ]}
               wrapper="span"
               speed={50}
               repeat={Infinity}
