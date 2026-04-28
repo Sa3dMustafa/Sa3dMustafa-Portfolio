@@ -136,15 +136,15 @@ export default function HeroSection() {
           <div className="hero-role">
             <TypeAnimation
               sequence={[
-                "React Developer",
+                "Frontend Developer",
                 2000,
-                "Next.js Engineer",
+                "React & Next.js Specialist",
                 2000,
-                "UI Engineer",
+                "Modern UI Developer",
                 2000,
-                "Performance Optimizer",
+                "Performance Optimization Expert",
                 2000,
-                "Frontend Architect",
+                "Scalable Frontend Architect",
                 2000,
                 "Vibe Coding",
                 2000,
@@ -166,7 +166,7 @@ export default function HeroSection() {
             {[
               { num: "10+", label: "Projects Shipped" },
               { num: "1+", label: "Years Building" },
-              { num: "100%", label: "Responsive UI" }
+              { num: "100%", label: "Responsive UI" },
             ].map((stat) => (
               <div key={stat.label} className="stat">
                 <span className="stat-num">{stat.num}</span>
