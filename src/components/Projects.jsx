@@ -4,13 +4,14 @@ import { useReveal } from "../hooks/useReveal";
 import ProjectModal from "./ProjectModal";
 import "./Projects.css";
 
-const normalizeTech = (tech) =>
-  tech.toLowerCase().replace(/\s|\./g, "");
+const normalizeTech = (tech) => tech.toLowerCase().replace(/\s|\./g, "");
 
 const FILTERS = ["All", "React", "Next.js", "JavaScript", "HTML&CSS"];
 
 function ProjectCard({ project, onOpen, index }) {
   const ref = useReveal();
+
+  const baseImg = project.images?.[0] || "/fallback.webp";
 
   return (
     <div
@@ -18,10 +19,11 @@ function ProjectCard({ project, onOpen, index }) {
       ref={ref}
       onClick={() => onOpen(project)}
     >
-      <div className="project-image">
-        <img src={project.images?.[0]} alt={project.title} />
-        <div className="project-image-overlay" />
-      </div>
+      <img
+        src={project.images?.[0] || "/fallback.webp"}
+        loading="lazy"
+        alt={project.title}
+      />
 
       <div className="project-content">
         <div className="project-top">
@@ -82,8 +84,7 @@ export default function Projects() {
     () => ({
       All: () => true,
 
-      React: (project) =>
-        normalizeTech(project.primaryTech || "") === "react",
+      React: (project) => normalizeTech(project.primaryTech || "") === "react",
 
       "Next.js": (project) =>
         normalizeTech(project.primaryTech || "") === "nextjs",
@@ -98,7 +99,7 @@ export default function Projects() {
         return ["html", "css"].includes(tech);
       },
     }),
-    []
+    [],
   );
 
   const filtered = useMemo(() => {
@@ -181,9 +182,7 @@ export default function Projects() {
         </div>
       </div>
 
-      {modal && (
-        <ProjectModal project={modal} onClose={() => setModal(null)} />
-      )}
+      {modal && <ProjectModal project={modal} onClose={() => setModal(null)} />}
     </section>
   );
 }

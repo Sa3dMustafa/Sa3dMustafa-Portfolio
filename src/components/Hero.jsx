@@ -1,7 +1,7 @@
 ﻿import React, { useEffect, useRef, useState } from "react";
 import { TypeAnimation } from "react-type-animation";
 import "./Hero.css";
-import avatar from "../../public/assets/myphoto.png";
+import avatar from "../../public/assets/myphoto-900.webp";
 import { FaFileDownload } from "react-icons/fa";
 
 const CODE_SNIPPETS = [
@@ -146,6 +146,8 @@ export default function HeroSection() {
                 2000,
                 "Frontend Architect",
                 2000,
+                "Vibe Coding",
+                2000,
               ]}
               wrapper="span"
               speed={50}
@@ -164,7 +166,7 @@ export default function HeroSection() {
             {[
               { num: "10+", label: "Projects Shipped" },
               { num: "1+", label: "Years Building" },
-              { num: "98+", label: "Lighthouse Score" },
+              { num: "100%", label: "Responsive UI" }
             ].map((stat) => (
               <div key={stat.label} className="stat">
                 <span className="stat-num">{stat.num}</span>
@@ -174,7 +176,11 @@ export default function HeroSection() {
           </div>
 
           <div className="hero-ctas">
-            <a className="btn-primary" href="/SaadMustafa-CV(Front-End-Developer).pdf" download>
+            <a
+              className="btn-primary"
+              href="/SaadMustafa-CV(Front-End-Developer).pdf"
+              download
+            >
               Download My Resume <FaFileDownload />
             </a>
             <button
@@ -211,7 +217,14 @@ export default function HeroSection() {
           <div className="hero-image-ring" />
           <div className="hero-image-glow" />
           <div className="hero-avatar">
-            <img src={avatar} alt="Saad Mustafa" className="avatar-photo" />
+            <img
+              src={avatar}
+              alt="Saad Mustafa"
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+              className="avatar-photo"
+            />
             <div className="avatar-badge">
               <span>🔥</span> Frontend Dev
             </div>
