@@ -2,7 +2,6 @@
 import { TypeAnimation } from "react-type-animation";
 import "./Hero.css";
 import avatar from "../../public/assets/myphoto-900.webp";
-import { FaFileDownload } from "react-icons/fa";
 
 const CODE_SNIPPETS = [
   { text: "const ui = build(vision)", x: "5%", y: "18%", delay: 0 },
@@ -181,7 +180,15 @@ export default function HeroSection() {
               href="/SaadMustafa-CV(Front-End-Developer).pdf"
               download
             >
-              Download My Resume <FaFileDownload />
+              Download My Resume <svg
+  width="20"
+  height="20"
+  viewBox="0 0 24 24"
+  fill="currentColor"
+>
+  <path d="M12 16a1 1 0 0 1-1-1V7.41L8.7 9.71a1 1 0 1 1-1.4-1.42l4-4a1 1 0 0 1 1.4 0l4 4a1 1 0 0 1-1.4 1.42L13 7.41V15a1 1 0 0 1-1 1z" />
+  <path d="M5 20a2 2 0 0 1-2-2v-3a1 1 0 0 1 2 0v3h14v-3a1 1 0 0 1 2 0v3a2 2 0 0 1-2 2H5z" />
+</svg>
             </a>
             <button
               className="btn-outline"
