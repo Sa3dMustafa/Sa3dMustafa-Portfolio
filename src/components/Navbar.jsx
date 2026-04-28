@@ -71,13 +71,13 @@ export default function Navbar() {
         <div
           className={`nav-overlay ${menuOpen ? "open" : ""}`}
           onClick={() => setMenuOpen(false)}
-          aria-hidden={!menuOpen}
+          hidden={!menuOpen}
         />
 
         <ul
-          id="primary-navigation"
-          className={`nav-links ${menuOpen ? "open" : ""}`}
-          aria-hidden={!menuOpen}
+            id="primary-navigation"
+            className={`nav-links ${menuOpen ? "open" : ""}`}
+            inert={!menuOpen ? "" : undefined}
         >
           <li className="nav-mobile-head">
             <div className="nav-mobile-brand">

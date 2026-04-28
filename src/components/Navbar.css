@@ -60,19 +60,18 @@
 }
 
 .nav-link {
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   font-weight: 500;
-  color: var(--text-secondary);
+  color: var(--teal);
   padding: 8px 14px;
   border-radius: 8px;
   transition: all 0.2s ease;
-  position: relative;
 }
 
 .nav-link:hover,
 .nav-link.active {
   color: var(--teal);
-  background: var(--teal-glow);
+  background: rgba(26, 188, 156, 0.12);
 }
 
 .nav-cta {
