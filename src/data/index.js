@@ -178,6 +178,73 @@ export const projects = [
     ],
   },
   {
+    id: "taskflow-kanban-board",
+    title: "TaskFlow",
+    tagline: "Modern Kanban Productivity Dashboard",
+    shortDesc:
+      "A feature-rich Kanban board application that helps users manage tasks visually with drag-and-drop interactions, priority tracking, progress analytics, and persistent storage.",
+    problem:
+      "Traditional to-do lists become difficult to manage as projects grow, making it challenging to track task status, prioritize work, and maintain visibility across the entire workflow.",
+    solution:
+      "Developed a modern Kanban-style dashboard using React and @hello-pangea/dnd, enabling users to create, organize, prioritize, search, and move tasks seamlessly across workflow stages.",
+    impact:
+      "Improves task organization and productivity by providing a clear visual workflow, real-time progress tracking, and a responsive user experience across all devices.",
+    primaryTech: "React",
+    tech: [
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "JavaScript (ES6+)",
+      "@hello-pangea/dnd",
+      "LocalStorage API",
+    ],
+    achievements: [
+      "Kanban workflow with To Do, In Progress, and Done stages",
+      "Smooth drag-and-drop task management",
+      "Priority-based task categorization and filtering",
+      "Real-time search across task titles and descriptions",
+      "Animated completion progress tracking",
+      "Persistent Local Storage synchronization",
+      "Responsive dashboard optimized for mobile and desktop",
+    ],
+    github: "https://github.com/Sa3dMustafa/To-Do-App--",
+    demo: "https://to-do-app-ashy-rho.vercel.app/",
+    color: "#06B6D4",
+    emoji: "🚀",
+    images: [
+      "/assets/to-do-app/todo-1.webp",
+      "/assets/to-do-app/todo-2.webp",
+      "/assets/to-do-app/todo-3.webp",
+    ],
+  },
+  {
+    id: "far-away-packing-list",
+    title: "Travrel List",
+    tagline: "Travel Checklist Management App",
+    shortDesc:
+      "A React application that helps travelers organize packing items, track progress, and persist data using Local Storage.",
+    problem:
+      "Managing travel essentials manually makes it easy to forget important items and difficult to track packing progress.",
+    solution:
+      "Built a React-based packing list app with item management, packing status tracking, sorting options, and Local Storage persistence.",
+    impact:
+      "Provides a simple and reliable way to organize travel preparations while ensuring data remains available across sessions.",
+    primaryTech: "React",
+    tech: ["React", "JavaScript (ES6+)", "CSS3", "Vite", "LocalStorage API"],
+    achievements: [
+      "Persistent data storage with Local Storage",
+      "Dynamic item sorting and filtering",
+      "Real-time packing progress statistics",
+      "Component-based React architecture",
+      "Responsive and interactive user experience",
+    ],
+    github: "https://github.com/Sa3dMustafa/travel-list",
+    demo: "https://travel-list-rg9frc1mx-sa3dmustafas-projects.vercel.app/",
+    color: "#1ABC9C",
+    emoji: "🧳",
+    images: ["/assets/travel-list/travel-list.webp"],
+  },
+  {
     id: "CRUD",
     title: "CRUD Products Management System",
     tagline: "Vanilla JS Product Management with LocalStorage",
