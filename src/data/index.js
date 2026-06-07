@@ -283,6 +283,36 @@ export const projects = [
       "/assets/CRUD/crud3-900.webp",
     ],
   },
+  {
+    id: "guess-my-number",
+    title: "Guess My Number",
+    tagline: "Interactive JavaScript Guessing Game",
+    shortDesc:
+      "A fun browser-based number guessing game that challenges players to find a hidden number with smart hints and scoring system.",
+    problem:
+      "Beginners often struggle to understand how JavaScript logic, DOM manipulation, and state management work together in real interactive applications.",
+    solution:
+      "Built an interactive guessing game using vanilla JavaScript that demonstrates DOM updates, event handling, conditional logic, and game state management in a simple UI.",
+    impact:
+      "Improved understanding of core JavaScript concepts such as events, randomization, and dynamic UI updates through an engaging hands-on project.",
+    primaryTech: "JavaScript",
+    tech: ["JavaScript", "HTML", "CSS"],
+    achievements: [
+      "Random number generation between custom range",
+      "Dynamic UI feedback based on user input",
+      "Score and high score tracking system",
+      "Game reset functionality with improved UX",
+      "Real-time DOM manipulation and event handling",
+    ],
+    github: "https://github.com/Sa3dMustafa/Guess-game",
+    demo: "https://sa3dmustafa.github.io/Guess-game/",
+    color: "#60b347",
+    emoji: "🎯",
+    images: [
+      "/assets/Gusse-game/gusse-game-900.webp",
+      "/assets/Gusse-game/gusse2-900.webp",
+    ],
+  },
 
   {
     id: "admin-dashboard",
@@ -434,36 +464,6 @@ export const projects = [
       "/assets/KasparTemplateWebsite/kasper-3-900.webp",
     ],
   },
-  {
-    id: "guess-my-number",
-    title: "Guess My Number",
-    tagline: "Interactive JavaScript Guessing Game",
-    shortDesc:
-      "A fun browser-based number guessing game that challenges players to find a hidden number with smart hints and scoring system.",
-    problem:
-      "Beginners often struggle to understand how JavaScript logic, DOM manipulation, and state management work together in real interactive applications.",
-    solution:
-      "Built an interactive guessing game using vanilla JavaScript that demonstrates DOM updates, event handling, conditional logic, and game state management in a simple UI.",
-    impact:
-      "Improved understanding of core JavaScript concepts such as events, randomization, and dynamic UI updates through an engaging hands-on project.",
-    primaryTech: "JavaScript",
-    tech: ["JavaScript", "HTML", "CSS"],
-    achievements: [
-      "Random number generation between custom range",
-      "Dynamic UI feedback based on user input",
-      "Score and high score tracking system",
-      "Game reset functionality with improved UX",
-      "Real-time DOM manipulation and event handling",
-    ],
-    github: "https://github.com/Sa3dMustafa/Guess-game",
-    demo: "https://sa3dmustafa.github.io/Guess-game/",
-    color: "#60b347",
-    emoji: "🎯",
-    images: [
-      "/assets/Gusse-game/gusse-game-900.webp",
-      "/assets/Gusse-game/gusse2-900.webp",
-    ],
-  },
 ];
 export const skills = {
   Frontend: [
@@ -528,10 +528,23 @@ export const leadership = [
   },
 ];
 
-export const experience = [
+export const timeline = [
+  {
+    title: "Bachelor of Computer Science",
+    company:
+      "Misr Higher Institute of Commerce and Computers (M.E.T Academy), Mansoura, Egypt",
+    period: "Sept. 2020 – Jul. 2024",
+    type: "Education",
+    icon: "🎓",
+    points: [
+      "Grade: Very Good",
+      "Focused on Computer Science fundamentals, algorithms, and software engineering",
+    ],
+  },
+
   {
     title: "Front End Intern",
-    company: "NTI - National Telecommunication Institute, Mansoura, Egypt",
+    company: "NTI - National Telecommunication Institute - Mansoura, Egypt",
     period: "Feb. 2023 – Mar. 2023",
     type: "Internship",
     icon: "🏢",
@@ -540,6 +553,20 @@ export const experience = [
       "Designed and developed responsive and interactive web pages using CSS3 and JavaScript",
       "Worked on building and editing client-side interfaces and layouts",
       "Trained on client-side scripting principles and UI development fundamentals",
+    ],
+  },
+
+  {
+    title: "Front-End Developer Intern",
+    company: "Zikola Agency - Mansoura, Egypt",
+    period: "May 2025 – Present",
+    type: "Internship",
+    icon: "💼",
+    points: [
+      "Developing web applications using React.js and Next.js",
+      "Building reusable UI components and responsive user interfaces",
+      "Working with REST APIs, routing, and state management solutions",
+      "Applying Git workflows, performance optimization, and frontend best practices",
     ],
   },
 ];
